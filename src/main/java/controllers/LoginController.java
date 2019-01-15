@@ -24,9 +24,7 @@ public class LoginController {
     public PasswordField passwordFiled;
 
     public void numberOne(ActionEvent actionEvent) {
-        this.addChar(this.ONE);
-        this.checkLenghtOfPassword();
-        passwordFiled.setPromptText(password);
+       procces(this.ONE);
     }
 
     public void numberTwo(ActionEvent actionEvent) {
@@ -90,7 +88,14 @@ public class LoginController {
 
     public void checkLenghtOfPassword() {
         if (this.password.length() > 4) {
-            this.password = password.substring(0, 4);
+            this.password = password.substring(0, 3);
         }
     }
+
+    public void procces(String sign){
+        checkLenghtOfPassword();
+        addChar(sign);
+        passwordFiled.setPromptText(password);
+    }
+
 }
