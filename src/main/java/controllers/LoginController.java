@@ -24,48 +24,39 @@ public class LoginController {
     public PasswordField passwordFiled;
 
     public void numberOne(ActionEvent actionEvent) {
-       procces(this.ONE);
+        procces(this.ONE);
     }
 
     public void numberTwo(ActionEvent actionEvent) {
-        this.addChar(this.TWO);
-        checkLenghtOfPassword();
-        passwordFiled.setPromptText(password);
+        procces(this.TWO);
     }
 
     public void numberThree(ActionEvent actionEvent) {
-        this.addChar(this.THREE);
-        passwordFiled.setPromptText(password);
+        procces(this.THREE);
     }
 
     public void numberFour(ActionEvent actionEvent) {
-        this.addChar(this.FOUR);
-        passwordFiled.setPromptText(password);
+        procces(this.FOUR);
     }
 
     public void numberFive(ActionEvent actionEvent) {
-        this.addChar(this.FIVE);
-        passwordFiled.setPromptText(password);
+        procces(this.FIVE);
     }
 
     public void numberSix(ActionEvent actionEvent) {
-        this.addChar(this.SIX);
-        passwordFiled.setPromptText(password);
+        procces(this.SIX);
     }
 
     public void numberSeven(ActionEvent actionEvent) {
-        this.addChar(this.SEVEN);
-        passwordFiled.setPromptText(password);
+        procces(this.SEVEN);
     }
 
     public void numberEight(ActionEvent actionEvent) {
-        this.addChar(this.EIGHT);
-        passwordFiled.setPromptText(password);
+        procces(this.EIGHT);
     }
 
     public void numberNine(ActionEvent actionEvent) {
-        this.addChar(this.NINE);
-        passwordFiled.setPromptText(password);
+        procces(this.NINE);
     }
 
     public void confrmButton(ActionEvent actionEvent) {
@@ -88,13 +79,13 @@ public class LoginController {
 
     public void checkLenghtOfPassword() {
         if (this.password.length() > 4) {
-            this.password = password.substring(0, 3);
+            this.password = password.substring(0, 4);
         }
     }
 
     public void procces(String sign){
-        checkLenghtOfPassword();
         addChar(sign);
+        checkLenghtOfPassword();
         passwordFiled.setPromptText(password);
     }
 
