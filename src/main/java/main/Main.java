@@ -26,10 +26,6 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) throws Exception {
 
-        FxmlUtils fxml = new FxmlUtils();
-
-     //   FXMLLoader loader = new FXMLLoader(this.getClass().getResource(BORDER_PANE_MAIN_FXML));
-        
         Pane borderPane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
         borderPane.setBackground(new Background(new BackgroundImage(new Image(BACKGROUND_PATH), NO_REPEAT, NO_REPEAT, CENTER, DEFAULT)));
         Scene scene = new Scene(borderPane);

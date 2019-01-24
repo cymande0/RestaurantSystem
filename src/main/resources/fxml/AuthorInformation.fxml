@@ -3,7 +3,6 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AuthorInfoController">
@@ -14,7 +13,7 @@
          </BorderPane.margin></Button>
    </bottom>
    <center>
-      <Label text="Praca inzynierska&#10;System wsparcia dla restauracji&#10;Konrad Pieta, Krakow 2019&#10;" BorderPane.alignment="CENTER">
+      <Label text="Coscoscos" BorderPane.alignment="CENTER">
          <font>
             <Font size="16.0" />
          </font></Label>

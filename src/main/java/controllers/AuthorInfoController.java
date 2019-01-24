@@ -1,14 +1,12 @@
 package controllers;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import utils.FxmlUtils;
 
 public class AuthorInfoController {
+
     @FXML
     private Button closeButton;
 

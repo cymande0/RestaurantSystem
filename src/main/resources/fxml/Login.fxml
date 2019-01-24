@@ -70,7 +70,7 @@
                </font></Button>
          </children>
       </GridPane>
-      <ProgressBar prefHeight="30.0" prefWidth="300.0" progress="0.0" />
+      <ProgressBar fx:id="progressBar" prefHeight="30.0" prefWidth="300.0" progress="0.0" />
       <Pane prefHeight="60.0" prefWidth="200.0">
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="33.0" layoutY="15.0" mnemonicParsing="true" onAction="#confrmButton" prefHeight="30.0" text="Potwierdz">

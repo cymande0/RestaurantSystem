@@ -1,9 +1,14 @@
 package controllers;
 
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import utils.FxmlUtils;
 
 public class LoginController {
 
@@ -17,76 +22,153 @@ public class LoginController {
     private static final String EIGHT = "8";
     private static final String NINE = "9";
     private static final String NULL = "";
+    private static final String CORRECT_PASSWORD = "1233";
+    private static final String CORRECT_LOGIN_POPUP = "/fxml/CorrectLogin.fxml";
+    private static final String UNCCORECT_LOGIN_POPUP = "/fxml/UncorrectLogin.fxml";
 
-    private String password = NULL;
+
+    private static String password = NULL;
+
+    private double percentOfProgessBar = 0;
 
     @FXML
-    public PasswordField passwordFiled;
+    public Button successfulLogin;
+
+    @FXML
+    public Button unsuccessfulLogin;
+
+    @FXML
+    private ProgressBar progressBar;
+
+    @FXML
+    private PasswordField passwordFiled;
+
+    public MainController mainController;
+
 
     public void numberOne(ActionEvent actionEvent) {
-        procces(this.ONE);
+        loginProcess(ONE);
     }
 
     public void numberTwo(ActionEvent actionEvent) {
-        procces(this.TWO);
+        loginProcess(TWO);
     }
 
     public void numberThree(ActionEvent actionEvent) {
-        procces(this.THREE);
+        loginProcess(THREE);
     }
 
     public void numberFour(ActionEvent actionEvent) {
-        procces(this.FOUR);
+        loginProcess(FOUR);
     }
 
     public void numberFive(ActionEvent actionEvent) {
-        procces(this.FIVE);
+        loginProcess(FIVE);
     }
 
     public void numberSix(ActionEvent actionEvent) {
-        procces(this.SIX);
+        loginProcess(SIX);
     }
 
     public void numberSeven(ActionEvent actionEvent) {
-        procces(this.SEVEN);
+        loginProcess(SEVEN);
     }
 
     public void numberEight(ActionEvent actionEvent) {
-        procces(this.EIGHT);
+        loginProcess(EIGHT);
     }
 
     public void numberNine(ActionEvent actionEvent) {
-        procces(this.NINE);
+        loginProcess(NINE);
     }
 
     public void confrmButton(ActionEvent actionEvent) {
-        this.showPassword();
-        passwordFiled.setPromptText(password);
+        Pane popup = new Pane();
+        Stage stage = new Stage();
+
+        if(password.equals(CORRECT_PASSWORD)){
+            popup = FxmlUtils.fxmlLoader(CORRECT_LOGIN_POPUP);
+            stage.setScene(new Scene(popup));
+            stage.show();
+        }
+        else{
+            popup = FxmlUtils.fxmlLoader(UNCCORECT_LOGIN_POPUP);
+            stage.setScene(new Scene(popup));
+            stage.show();
+        }
+
     }
 
     public void deleteText(ActionEvent actionEvent) {
-        this.password = this.NULL;
-        passwordFiled.setPromptText(password);
+        password = NULL;
+        passwordFiled.setText(password);
+        progressBarProcess(false);
     }
 
-    public void addChar(String anotherUserString) {
-        this.password = new StringBuilder(this.password).append(anotherUserString).toString();
+    public void correctLogin(ActionEvent actionEvent) {
+        Stage stage = (Stage) successfulLogin.getScene().getWindow();
+        stage.close();
+
+        System.out.println(mainController);
+
+        //System.out.println(mainController);
+
+//        mainController = MainController.getInstance();
+//        mainController.disabledLogin();
+
+        //MainController.disabledLogin();
+//        System.out.println(mainController);
+//        mainController.disabledLogin();
+//        System.out.println(mainController);
+//        mainController.getBorderPane().getChildren().remove(mainController.getLoginWindow());
+//        loader.setLocation(getClass().getResource("/fxml/MainBorderPane.fxml"));
+//        BorderPane pane = null;
+//        try {
+//            pane = loader.load();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        MainController mainController = loader.getController();
+//        mainController.disabledLogin();
     }
 
-    public void showPassword() {
-        System.out.println(this.password);
+    public void tryLoggingAgain(ActionEvent actionEvent) {
+    }
+
+    public void addCharToPassword(String anotherUserString) {
+        password = new StringBuilder(password).append(anotherUserString).toString();
     }
 
     public void checkLenghtOfPassword() {
-        if (this.password.length() > 4) {
-            this.password = password.substring(0, 4);
+        if (password.length() > 4) {
+            password = password.substring(0, 4);
         }
     }
 
-    public void procces(String sign){
-        addChar(sign);
+    public void loginProcess(String character){
+        addCharToPassword(character);
+
         checkLenghtOfPassword();
-        passwordFiled.setPromptText(password);
+        passwordFiled.setText(password);
+        progressBarProcess(true);
     }
 
+    public void progressBarProcess(boolean isIncreaseProgess){
+        if(isIncreaseProgess == true) {
+            percentOfProgessBar += 0.25;
+        }
+        else{
+            percentOfProgessBar = 0;
+        }
+        progressBar.setProgress(percentOfProgessBar);
+    }
+
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
+    }
+
+    public MainController getMainController() {
+        return mainController;
+    }
 }
