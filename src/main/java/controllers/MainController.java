@@ -2,14 +2,13 @@ package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.Pane;
 import utils.FxmlUtils;
 
 public class MainController {
 
     @FXML
-    public VBox mainButtons;
-
+    private Pane pane;
 
     @FXML
     private BorderPane borderPane;
@@ -18,29 +17,21 @@ public class MainController {
     private LoginController loginWindowController;
 
     @FXML
-    public void initialize() {
-        System.out.println(this);
-        loginWindowController.setMainController(this);
-    }
+    private MenuButtonsController menuButtonsController;
 
+    @FXML
+    public void initialize() {
+        loginWindowController.setMainController(this);
+        loginWindowController.setMenuButtonsController(menuButtonsController);
+    }
 
    public void setInfoInCentre(String fxmlPath){
         this.borderPane.setCenter(FxmlUtils.fxmlLoader(fxmlPath));
     }
 
 
-//    public VBox getLoginWindow() {
-//        return loginWindow;
-//    }
-
-    public BorderPane getBorderPane() {
-        return borderPane;
+    public void disableLogin(){
+        borderPane.getChildren().remove(pane);
     }
 
-//    public void disabledLogin(){
-//      //  System.out.println(this);
-//        borderPane.getChildren().remove(loginWindow);
-//    }
 }
-
-

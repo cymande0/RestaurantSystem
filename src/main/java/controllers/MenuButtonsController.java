@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import utils.FxmlUtils;
@@ -11,6 +12,21 @@ import utils.FxmlUtils;
 public class MenuButtonsController {
 
     private static final String AUTHOR_INFO_FXML = "/fxml/AuthorInformation.fxml";
+
+    @FXML
+    public Button homeButton;
+
+    @FXML
+    public Button mainActionButton;
+
+    @FXML
+    public Button foodMenuButton;
+
+    @FXML
+    public Button historyOfOrdersButton;
+
+    @FXML
+    public Button infoAuthorButton;
 
     private MainController mainController;
 
@@ -47,5 +63,13 @@ public class MenuButtonsController {
     @FXML
     public void quitApplication(ActionEvent actionEvent) {
         Platform.exit();
+    }
+
+    public void enableButtons(){
+        homeButton.setDisable(false);
+        mainActionButton.setDisable(false);
+        foodMenuButton.setDisable(false);
+        historyOfOrdersButton.setDisable(false);
+        infoAuthorButton.setDisable(false);
     }
 }

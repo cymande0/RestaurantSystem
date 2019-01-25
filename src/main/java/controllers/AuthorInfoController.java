@@ -20,5 +20,4 @@ public class AuthorInfoController {
     public void setMainController(MainController mainController) {
         this.mainController = mainController;
     }
-
 }

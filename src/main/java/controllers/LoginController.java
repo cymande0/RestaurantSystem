@@ -45,6 +45,8 @@ public class LoginController {
 
     public MainController mainController;
 
+    public MenuButtonsController menuButtonsController;
+
 
     public void numberOne(ActionEvent actionEvent) {
         loginProcess(ONE);
@@ -83,13 +85,16 @@ public class LoginController {
     }
 
     public void confrmButton(ActionEvent actionEvent) {
+
         Pane popup = new Pane();
         Stage stage = new Stage();
 
-        if(password.equals(CORRECT_PASSWORD)){
+        if(CORRECT_PASSWORD.equals(password)){
             popup = FxmlUtils.fxmlLoader(CORRECT_LOGIN_POPUP);
             stage.setScene(new Scene(popup));
             stage.show();
+            mainController.disableLogin();
+            menuButtonsController.enableButtons();
         }
         else{
             popup = FxmlUtils.fxmlLoader(UNCCORECT_LOGIN_POPUP);
@@ -109,28 +114,6 @@ public class LoginController {
         Stage stage = (Stage) successfulLogin.getScene().getWindow();
         stage.close();
 
-        System.out.println(mainController);
-
-        //System.out.println(mainController);
-
-//        mainController = MainController.getInstance();
-//        mainController.disabledLogin();
-
-        //MainController.disabledLogin();
-//        System.out.println(mainController);
-//        mainController.disabledLogin();
-//        System.out.println(mainController);
-//        mainController.getBorderPane().getChildren().remove(mainController.getLoginWindow());
-//        loader.setLocation(getClass().getResource("/fxml/MainBorderPane.fxml"));
-//        BorderPane pane = null;
-//        try {
-//            pane = loader.load();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        MainController mainController = loader.getController();
-//        mainController.disabledLogin();
     }
 
     public void tryLoggingAgain(ActionEvent actionEvent) {
@@ -168,7 +151,7 @@ public class LoginController {
         this.mainController = mainController;
     }
 
-    public MainController getMainController() {
-        return mainController;
+    public void setMenuButtonsController(MenuButtonsController menuButtonsController) {
+        this.menuButtonsController = menuButtonsController;
     }
 }
