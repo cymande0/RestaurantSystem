@@ -1,4 +1,6 @@
-package datebase;
+package datebase.models;
+
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,17 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class HistoryOfChecks {
+public class Test {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private java.sql.Date date;
-    private double cost;
+    private String name;
 
-    //Dodanie nowej zmiennej - unikalnego id
-    
+    public Test(String name){
+        this.name = name;
+    }
 
 
 }
