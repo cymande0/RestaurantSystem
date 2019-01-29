@@ -20,7 +20,6 @@ public class Meal {
 
     public Meal(String nameOfMeal, double price){
         this.nameOfMeal = nameOfMeal;
-    //    this.typeOfMeal = typeOfMeal;
         this.price = price;
     }
 
