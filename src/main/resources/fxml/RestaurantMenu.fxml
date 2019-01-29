@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuRestuarantController">
+   <children>
+      <HBox prefHeight="40.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="entireMenu" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Wszystko" />
+            <Button fx:id="breakfast" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" text="Sniadania" />
+            <Button fx:id="starters" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" text="Przystawki" />
+            <Button fx:id="soups" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Zupy" />
+            <Button fx:id="mainDishes" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" text="Dania glowne" />
+            <Button fx:id="drinks" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Napoje" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
