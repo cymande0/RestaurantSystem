@@ -1,9 +1,9 @@
 package datebase.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Meal {
@@ -13,13 +13,13 @@ public class Meal {
     private long id;
 
     private String nameOfMeal;
-    private String typeOfMeal;
     private double price;
 
+    @OneToMany(mappedBy = "meal")
+    private List<TypeOfMeal> typeOfMeal = new ArrayList<TypeOfMeal>();
 
-    public Meal(String nameOfMeal, String typeOfMeal, double price){
+    public Meal(String nameOfMeal, double price){
         this.nameOfMeal = nameOfMeal;
-        this.typeOfMeal = typeOfMeal;
         this.price = price;
     }
 
@@ -37,14 +37,6 @@ public class Meal {
 
     public void setNameOfMeal(String nameOfMeal) {
         this.nameOfMeal = nameOfMeal;
-    }
-
-    public String getTypeOfMeal() {
-        return typeOfMeal;
-    }
-
-    public void setTypeOfMeal(String typeOfMeal) {
-        this.typeOfMeal = typeOfMeal;
     }
 
     public double getPrice() {
