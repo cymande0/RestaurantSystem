@@ -3,9 +3,12 @@ package controllers;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import utils.FxmlUtils;
 
@@ -32,8 +35,14 @@ public class MenuButtonsController {
 
     private AuthorInfoController authorInfoController;
 
+    private BorderPane pane;
+
     public void setMainController(MainController mainController) {
         this.mainController = mainController;
+    }
+
+    public void setPane(BorderPane pane) {
+        this.pane = pane;
     }
 
     @FXML
@@ -46,6 +55,10 @@ public class MenuButtonsController {
 
     @FXML
     public void showResuarantMenu(ActionEvent actionEvent) {
+        Pane pane2 = FxmlUtils.fxmlLoader("/fxml/RestaurantMenu.fxml");
+     //   pane.setAlignment(pane2, Pos.TOP_CENTER);
+        pane.setCenter(pane2);
+
     }
 
     @FXML
