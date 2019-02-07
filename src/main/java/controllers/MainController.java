@@ -3,10 +3,12 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import utils.FxmlUtils;
 
 public class MainController {
 
+    public VBox restaurantMenu;
     @FXML
     private Pane pane;
 
@@ -22,6 +24,7 @@ public class MainController {
     @FXML
     public void initialize() {
         loginWindowController.setMainController(this);
+        menuButtonsController.setPane(borderPane);
         loginWindowController.setMenuButtonsController(menuButtonsController);
     }
 
