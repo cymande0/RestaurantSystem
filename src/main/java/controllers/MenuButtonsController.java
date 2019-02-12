@@ -15,6 +15,7 @@ import utils.FxmlUtils;
 public class MenuButtonsController {
 
     private static final String AUTHOR_INFO_FXML = "/fxml/AuthorInformation.fxml";
+    private static final String MENU_INFO = "/fxml/RestaurantMenu.fxml";
 
     @FXML
     public Button homeButton;
@@ -47,6 +48,7 @@ public class MenuButtonsController {
 
     @FXML
     public void homePage(ActionEvent actionEvent) {
+        pane.getChildren().remove(pane.getCenter());
     }
 
     @FXML
@@ -55,10 +57,8 @@ public class MenuButtonsController {
 
     @FXML
     public void showResuarantMenu(ActionEvent actionEvent) {
-        Pane pane2 = FxmlUtils.fxmlLoader("/fxml/RestaurantMenu.fxml");
-     //   pane.setAlignment(pane2, Pos.TOP_CENTER);
+        Pane pane2 = FxmlUtils.fxmlLoader(MENU_INFO);
         pane.setCenter(pane2);
-
     }
 
     @FXML

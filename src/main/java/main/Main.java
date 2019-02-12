@@ -1,5 +1,6 @@
 package main;
 
+import dao.MealDao;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -32,7 +33,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 //
-//        MealDao dao = new MealDao();
-//        dao.getSth();
+        MealDao dao = new MealDao();
+        dao.getSth();
     }
 }
