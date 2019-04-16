@@ -1,19 +1,18 @@
 package utils;
 
-import datebase.models.Meal;
-import datebase.models.TypeOfMeal;
-
+import datebase.entity.Meal;
+import datebase.entity.TypeOfMeal;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 public class FillDatebase {
 
+    private EntityManager entityManager;
+
+    public FillDatebase(EntityManager entityManager){
+        this.entityManager = entityManager;
+    }
 
     public void fillDatebase() {
-
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         Meal schabowy = new Meal("Schanowy",13.99);
         Meal bigos = new Meal("Bigos", 9.99);
@@ -26,8 +25,11 @@ public class FillDatebase {
         entityManager.persist(zur);
         entityManager.persist(obiad);
         entityManager.getTransaction().commit();
-
-        entityManager.close();
-        entityManagerFactory.close();
     }
+
+//    public void getSth(){
+//        Query query = (Query) entityManager.createNativeQuery("select * FROM Meal");
+//        List<TypeOfMeal> resultList = query.getResultList();
+//        System.out.println(resultList.size());
+//    }
 }
