@@ -1,7 +1,8 @@
-package datebase.models;
+package datebase.entity;
+
+import datebase.entity.TypeOfMeal;
 
 import javax.persistence.*;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,11 +13,14 @@ public class Meal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name="name_of_meal")
     private String nameOfMeal;
+
+    @Column(name="price")
     private double price;
 
-    @OneToMany(mappedBy = "meal")
-    private List<TypeOfMeal> typeOfMeal = new ArrayList<TypeOfMeal>();
+//    @OneToMany(mappedBy = "meal")
+//    private List<TypeOfMeal> typeOfMeal = new ArrayList<TypeOfMeal>();
 
     public Meal(String nameOfMeal, double price){
         this.nameOfMeal = nameOfMeal;
@@ -45,5 +49,9 @@ public class Meal {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String toString(){
+        return "Meal [id=" + id + ", nameOfMeal=" + nameOfMeal + ", price=" + price + "]";
     }
 }

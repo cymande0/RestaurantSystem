@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxWidth="822.0" prefHeight="552.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RestuarantMenuController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="822.0">
+         <children>
+            <Button fx:id="entireMenu" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Wszystko">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="breakfast" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Sniadania">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="starters" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Przystawki">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="soups" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Zupy">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="mainDishes" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Dania glowne">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="drinks" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Napoje">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="80.0" />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets top="100.0" />
+         </VBox.margin>
+      </HBox>
+      <TableView prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn prefWidth="193.0" text="Nazwa" />
+            <TableColumn prefWidth="348.0" text="Sklad" />
+            <TableColumn prefWidth="260.0" text="Cena" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>
