@@ -20,7 +20,7 @@ public class MealDao {
 
     public void addMeal(){
         Session session = sessionFactory.getCurrentSession();
-        try{
+        try {
             session.beginTransaction();
             session.save(new Meal(input.getMealName(), input.getMealPrice()));
             session.getTransaction().commit();
@@ -37,7 +37,8 @@ public class MealDao {
             session.createQuery("delete from Meal where id=" + input.getID()).executeUpdate();
             session.getTransaction().commit();
         }
-        finally{
+        finally {
+            sessionFactory.close();
             session.close();
         }
     }

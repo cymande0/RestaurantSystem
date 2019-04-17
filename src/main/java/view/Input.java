@@ -35,4 +35,5 @@ public class Input {
     public int getID(){
         return getInt();
     }
+
 }

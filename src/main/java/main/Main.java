@@ -26,9 +26,10 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) throws Exception {
 
-        MealDao dao = new MealDao();
-        dao.addMeal();
-        dao.deleteMeal();
+//        MealDao dao = new MealDao();
+//        dao.addMeal();
+//        dao.deleteMeal();
+
 
 
 //        SessionFactory factory = new Configuration()

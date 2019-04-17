@@ -1,7 +1,5 @@
 package datebase.entity;
 
-import datebase.entity.TypeOfMeal;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +17,8 @@ public class Meal {
     @Column(name="price")
     private double price;
 
-//    @OneToMany(mappedBy = "meal")
-//    private List<TypeOfMeal> typeOfMeal = new ArrayList<TypeOfMeal>();
+    @Column(name="type_of_meal")
+    private String type;
 
     public Meal(String nameOfMeal, double price){
         this.nameOfMeal = nameOfMeal;
@@ -51,7 +49,15 @@ public class Meal {
         this.price = price;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType_of_meal(String type) {
+        this.type = type;
+    }
+
     public String toString(){
-        return "Meal [id=" + id + ", nameOfMeal=" + nameOfMeal + ", price=" + price + "]";
+        return "Meal [id=" + id + ", nameOfMeal=" + nameOfMeal + ", price=" + price + ", type=" + type +"]";
     }
 }

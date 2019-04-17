@@ -1,9 +1,6 @@
 package datebase.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class HistoryOfChecks {
@@ -12,7 +9,10 @@ public class HistoryOfChecks {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name="date")
     private java.sql.Date date;
+
+    @Column(name="cost")
     private double cost;
 
 }
