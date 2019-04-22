@@ -1,6 +1,6 @@
 package datebase.Dao;
 
-import datebase.dbutils.DBManager;
+import datebase.dbutils.HibernateUtil;
 import datebase.entity.Meal;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -14,7 +14,7 @@ public class MealDao {
     private Input input;
 
     public MealDao(){
-        this.sessionFactory = DBManager.getSessionFactory();
+        this.sessionFactory = HibernateUtil.getSessionFactory();
         this.input = new Input();
     }
 
@@ -42,4 +42,5 @@ public class MealDao {
             session.close();
         }
     }
+
 }

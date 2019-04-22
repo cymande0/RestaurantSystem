@@ -1,4 +1,4 @@
-package controllers;
+package controllers.mainWindow;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,11 +25,10 @@ public class LoginController {
     private static final String CORRECT_PASSWORD = "1233";
     private static final String CORRECT_LOGIN_POPUP = "/fxml/CorrectLogin.fxml";
     private static final String UNCCORECT_LOGIN_POPUP = "/fxml/UncorrectLogin.fxml";
-
-
     private static String password = NULL;
-
     private double percentOfProgessBar = 0;
+    public MainController mainController;
+    public MenuButtonsController menuButtonsController;
 
     @FXML
     public Button successfulLogin;
@@ -42,10 +41,6 @@ public class LoginController {
 
     @FXML
     private PasswordField passwordFiled;
-
-    public MainController mainController;
-
-    public MenuButtonsController menuButtonsController;
 
 
     public void numberOne(ActionEvent actionEvent) {
@@ -95,8 +90,7 @@ public class LoginController {
             stage.show();
             mainController.disableLogin();
             menuButtonsController.enableButtons();
-        }
-        else{
+        } else {
             popup = FxmlUtils.fxmlLoader(UNCCORECT_LOGIN_POPUP);
             stage.setScene(new Scene(popup));
             stage.show();
@@ -129,9 +123,8 @@ public class LoginController {
         }
     }
 
-    public void loginProcess(String character){
-        addCharToPassword(character);
-
+    public void loginProcess(String letter){
+        addCharToPassword(letter);
         checkLenghtOfPassword();
         passwordFiled.setText(password);
         progressBarProcess(true);
@@ -141,7 +134,7 @@ public class LoginController {
         if(isIncreaseProgess == true) {
             percentOfProgessBar += 0.25;
         }
-        else{
+        else {
             percentOfProgessBar = 0;
         }
         progressBar.setProgress(percentOfProgessBar);

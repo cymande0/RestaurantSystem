@@ -19,5 +19,4 @@ public class FxmlUtils {
         FXMLLoader loader = new FXMLLoader(FxmlUtils.class.getResource(fxmlPath));
         return loader;
     }
-
 }

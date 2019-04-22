@@ -4,15 +4,38 @@
              <!--xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"-->
              <!--version="2.0">-->
     <!--<persistence-unit name="myDatabase" transaction-type="RESOURCE_LOCAL">-->
+        <!--&lt;!&ndash;<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>&ndash;&gt;-->
+        <!--&lt;!&ndash;<provider>org.hibernate.ejb.HibernatePersistence</provider>&ndash;&gt;-->
         <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+        <!--<class>Meal</class>-->
         <!--<properties>-->
             <!--<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />-->
             <!--<property name="javax.persistence.jdbc.user" value="konrad" />-->
             <!--<property name="javax.persistence.jdbc.password" value="pelikan123" />-->
             <!--<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mojaBaza" />-->
+            <!--&lt;!&ndash;<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>&ndash;&gt;-->
+            <!--<property name="hibernate.show_sql" value="true"/>-->
             <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />-->
             <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
             <!--<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform" />-->
         <!--</properties>-->
     <!--</persistence-unit>-->
 <!--</persistence>-->
+
+
+
+<!--&lt;!&ndash;<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">&ndash;&gt;-->
+<!--&lt;!&ndash;<persistence-unit name="customerManager" transaction-type="RESOURCE_LOCAL">&ndash;&gt;-->
+    <!--&lt;!&ndash;<provider>org.hibernate.ejb.HibernatePersistence</provider>&ndash;&gt;-->
+    <!--&lt;!&ndash;<class>Customer</class>&ndash;&gt;-->
+    <!--&lt;!&ndash;<properties>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.show_sql" value="true"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.connection.username" value="root"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.connection.password" value="1234"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/general"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.max_fetch_depth" value="3"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</properties>&ndash;&gt;-->
+<!--&lt;!&ndash;</persistence-unit>&ndash;&gt;-->
+<!--&lt;!&ndash;</persistence>&ndash;&gt;-->

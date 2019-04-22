@@ -17,9 +17,6 @@ public class Meal {
     @Column(name="price")
     private double price;
 
-    @Column(name="type_of_meal")
-    private String type;
-
     public Meal(String nameOfMeal, double price){
         this.nameOfMeal = nameOfMeal;
         this.price = price;
@@ -49,15 +46,7 @@ public class Meal {
         this.price = price;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType_of_meal(String type) {
-        this.type = type;
-    }
-
     public String toString(){
-        return "Meal [id=" + id + ", nameOfMeal=" + nameOfMeal + ", price=" + price + ", type=" + type +"]";
+        return "Meal [id=" + id + ", nameOfMeal=" + nameOfMeal + ", price=" + price + "]";
     }
 }

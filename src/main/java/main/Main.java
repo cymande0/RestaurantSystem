@@ -1,5 +1,8 @@
 package main;
 
+import datebase.Dao.MealDao;
+import datebase.dbutils.HibernateUtil;
+import datebase.entity.Meal;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -11,8 +14,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.sqlite.core.DB;
+import utils.PreparingDatebase;
 import utils.FxmlUtils;
+import utils.PreparingDatebase;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -32,10 +40,13 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         Pane borderPane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
-        borderPane.setBackground(new Background(new BackgroundImage(new Image(BACKGROUND_PATH), NO_REPEAT, NO_REPEAT, CENTER, DEFAULT)));
+        borderPane.setBackground(new Background(new BackgroundImage(new Image(BACKGROUND_PATH), NO_REPEAT, NO_REPEAT,
+                CENTER, DEFAULT)));
+
         Scene scene = new Scene(borderPane);
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        PreparingDatebase.fillDatebase();
     }
 }

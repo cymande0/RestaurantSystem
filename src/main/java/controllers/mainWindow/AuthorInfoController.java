@@ -1,5 +1,6 @@
-package controllers;
+package controllers.mainWindow;
 
+import controllers.mainWindow.MainController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,7 +10,6 @@ public class AuthorInfoController {
 
     @FXML
     private Button closeButton;
-
     private MainController mainController;
 
     public void backToMainWindow(ActionEvent actionEvent) {

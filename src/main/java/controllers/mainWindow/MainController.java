@@ -1,4 +1,4 @@
-package controllers;
+package controllers.mainWindow;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
@@ -10,7 +10,7 @@ public class MainController {
 
     public VBox restaurantMenu;
     @FXML
-    private Pane pane;
+    private Pane loginPopup;
 
     @FXML
     private BorderPane borderPane;
@@ -34,7 +34,7 @@ public class MainController {
 
 
     public void disableLogin(){
-        borderPane.getChildren().remove(pane);
+        borderPane.getChildren().remove(loginPopup);
     }
 
 }

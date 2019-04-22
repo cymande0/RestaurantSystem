@@ -1,10 +1,11 @@
-package controllers;
+package controllers.menu;
 
+import controllers.mainWindow.MainController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
 
 public class RestuarantMenuController {
+
     @FXML
     private Button entireMenu;
 

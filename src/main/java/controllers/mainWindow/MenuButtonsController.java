@@ -1,14 +1,12 @@
-package controllers;
+package controllers.mainWindow;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import utils.FxmlUtils;
 
@@ -57,8 +55,8 @@ public class MenuButtonsController {
 
     @FXML
     public void showResuarantMenu(ActionEvent actionEvent) {
-        Pane pane2 = FxmlUtils.fxmlLoader(MENU_INFO);
-        pane.setCenter(pane2);
+        Pane login = FxmlUtils.fxmlLoader(MENU_INFO);
+        pane.setCenter(login);
     }
 
     @FXML
