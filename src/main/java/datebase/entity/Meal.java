@@ -17,6 +17,8 @@ public class Meal {
     @Column(name="price")
     private double price;
 
+    public Meal(){}
+
     public Meal(String nameOfMeal, double price){
         this.nameOfMeal = nameOfMeal;
         this.price = price;

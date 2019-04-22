@@ -17,12 +17,12 @@ import org.sqlite.core.DB;
 import utils.PreparingDatebase;
 import utils.FxmlUtils;
 import utils.PreparingDatebase;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.List;
 
 import static javafx.scene.layout.BackgroundPosition.CENTER;
 import static javafx.scene.layout.BackgroundRepeat.NO_REPEAT;
@@ -48,5 +48,12 @@ public class Main extends Application {
         primaryStage.show();
 
         PreparingDatebase.fillDatebase();
+
+        MealDao mealDao = new MealDao();
+        List<Meal> mealList = mealDao.getAllDate();
+
+        for(Meal meal : mealList){
+            System.out.println(meal);
+        }
     }
 }

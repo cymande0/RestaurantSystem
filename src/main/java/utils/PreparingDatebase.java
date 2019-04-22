@@ -3,10 +3,12 @@ package utils;
 //import datebase.dbutils.DBManager;
 import datebase.dbutils.HibernateUtil;
 import datebase.entity.Meal;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 public class PreparingDatebase {
 
@@ -28,12 +30,5 @@ public class PreparingDatebase {
         finally {
             session.close();
         }
-
     }
-
-//    public void getSth(){
-//        Query query = (Query) entityManager.createNativeQuery("select * FROM Meal");
-//        List<TypeOfMeal> resultList = query.getResultList();
-//        System.out.println(resultList.size());
-//    }
 }

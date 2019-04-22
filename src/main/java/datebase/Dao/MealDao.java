@@ -2,45 +2,45 @@ package datebase.Dao;
 
 import datebase.dbutils.HibernateUtil;
 import datebase.entity.Meal;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
 import view.Input;
+
+import java.util.List;
 
 public class MealDao {
 
-    private SessionFactory sessionFactory;
+    private Session session;
     private Input input;
 
     public MealDao(){
-        this.sessionFactory = HibernateUtil.getSessionFactory();
+        this.session = HibernateUtil.getSessionFactory().openSession();
         this.input = new Input();
     }
 
     public void addMeal(){
-        Session session = sessionFactory.getCurrentSession();
         try {
             session.beginTransaction();
             session.save(new Meal(input.getMealName(), input.getMealPrice()));
             session.getTransaction().commit();
-        }
-        finally {
-            session.close();
+        } catch(Exception e){
+            System.out.println(e.getMessage());
         }
     }
 
     public void deleteMeal(){
-        Session session = sessionFactory.getCurrentSession();
         try {
             session.beginTransaction();
             session.createQuery("delete from Meal where id=" + input.getID()).executeUpdate();
             session.getTransaction().commit();
-        }
-        finally {
-            sessionFactory.close();
-            session.close();
+        } catch(Exception e){
+            System.out.println(e.getMessage());
         }
     }
 
+    public List<Meal> getAllDate(){
+        String sqlQuery = "SELECT * FROM Meal";
+        SQLQuery query = session.createSQLQuery(sqlQuery);
+        List<Meal> mealList = query.addEntity(Meal.class).list();
+        return mealList;
+    }
 }
