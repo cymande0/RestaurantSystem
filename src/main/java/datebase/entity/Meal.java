@@ -12,14 +12,19 @@ public class Meal {
     @Column(name="name_of_meal")
     private String nameOfMeal;
 
+    @Column(name="type_of_meal")
+    private String typeOfMeal;
+
     @Column(name="price")
     private double price;
 
+
     public Meal(){}
 
-    public Meal(String nameOfMeal, double price){
+    public Meal(String nameOfMeal, String type, double price){
         this.nameOfMeal = nameOfMeal;
         this.price = price;
+        this.typeOfMeal = type;
     }
 
     public long getId() {
@@ -46,7 +51,18 @@ public class Meal {
         this.price = price;
     }
 
-    public String toString(){
-        return "Meal [id=" + id + ", nameOfMeal=" + nameOfMeal + ", price=" + price + "]";
+    public String getTypeOfMeal() {
+        return typeOfMeal;
     }
+
+    public void setTypeOfMeal(String typeOfMeal) {
+        this.typeOfMeal = typeOfMeal;
+    }
+
+    public String toString(){
+        return "Meal [id=" + id + ", nameOfMeal=" + nameOfMeal + ", typeOfMeal=" + typeOfMeal + ", price=" + price +
+                "]";
+    }
+
+
 }

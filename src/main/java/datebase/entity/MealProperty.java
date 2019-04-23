@@ -8,11 +8,14 @@ import javafx.beans.property.StringProperty;
 public class MealProperty {
 
     private StringProperty nameProp;
+    private StringProperty typeProp;
     private DoubleProperty priceProp;
 
-    public MealProperty(String name, double price){
+
+    public MealProperty(String name, String type, double price){
         this.nameProp = new SimpleStringProperty(name);
         this.priceProp = new SimpleDoubleProperty(price);
+        this.typeProp = new SimpleStringProperty(type);
     }
 
     public String getNameProp() {
@@ -37,5 +40,17 @@ public class MealProperty {
 
     public void setPriceProp(double priceProp) {
         this.priceProp.set(priceProp);
+    }
+
+    public String getTypeProp() {
+        return typeProp.get();
+    }
+
+    public StringProperty typePropProperty() {
+        return typeProp;
+    }
+
+    public void setTypeProp(String typeProp) {
+        this.typeProp.set(typeProp);
     }
 }

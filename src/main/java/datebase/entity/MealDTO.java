@@ -15,7 +15,7 @@ public class MealDTO {
         mealList.addAll(mealDao.getAllMeals());
 
         for(Meal meal : mealList){
-            mealPropertyList.add(new MealProperty(meal.getNameOfMeal(), meal.getPrice()));
+            mealPropertyList.add(new MealProperty(meal.getNameOfMeal(), meal.getTypeOfMeal(), meal.getPrice()));
         }
         return mealPropertyList;
     }

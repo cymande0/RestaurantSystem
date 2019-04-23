@@ -32,6 +32,11 @@ public class Input {
         return getDouble();
     }
 
+    public String getTypeOfMeal(){
+        System.out.print("Type type of new meal: ");
+        return getString();
+    }
+
     public int getID(){
         return getInt();
     }

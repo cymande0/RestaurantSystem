@@ -20,7 +20,7 @@ public class MealDao {
     public void addMeal(){
         try {
             session.beginTransaction();
-            session.save(new Meal(input.getMealName(), input.getMealPrice()));
+            session.save(new Meal(input.getMealName(), input.getTypeOfMeal(), input.getMealPrice()));
             session.getTransaction().commit();
         } catch(Exception e){
             System.out.println(e.getMessage());

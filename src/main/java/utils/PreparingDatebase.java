@@ -18,9 +18,9 @@ public class PreparingDatebase {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        Meal schabowy = new Meal("Schanowy",13.99);
-        Meal bigos = new Meal("Bigos", 9.99);
-        Meal zur = new Meal("Zur",8.00);
+        Meal schabowy = new Meal("Schanowy", "Danie glowne", 13.99);
+        Meal bigos = new Meal("Bigos", "Przystawka", 9.99);
+        Meal zur = new Meal("Zur", "Zupa", 8.00);
 
         try {
             session.save(bigos);
