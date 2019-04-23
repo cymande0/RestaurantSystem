@@ -1,8 +1,6 @@
 package datebase.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Meal {
@@ -17,11 +15,16 @@ public class Meal {
     @Column(name="price")
     private double price;
 
+//    private StringProperty nameProp;
+//    private DoubleProperty priceProp;
+
     public Meal(){}
 
     public Meal(String nameOfMeal, double price){
         this.nameOfMeal = nameOfMeal;
         this.price = price;
+//        this.nameProp = new SimpleStringProperty(nameOfMeal);
+//        this.priceProp = new SimpleDoubleProperty(price);
     }
 
     public long getId() {
@@ -47,6 +50,32 @@ public class Meal {
     public void setPrice(double price) {
         this.price = price;
     }
+
+//    @Column(name = "name_of_meal")
+//    public String getNameProp() {
+//        return nameProp.get();
+//    }
+//
+//    public void setNameProp(String nameProp) {
+//        this.nameProp.set(nameProp);
+//    }
+//
+//    public StringProperty namePropProperty() {
+//        return nameProp;
+//    }
+//
+//    @Column(name = "price")
+//    public double getPriceProp() {
+//        return priceProp.get();
+//    }
+//
+//    public void setPriceProp(double priceProp) {
+//        this.priceProp.set(priceProp);
+//    }
+//
+//    public DoubleProperty pricePropProperty() {
+//        return priceProp;
+//    }
 
     public String toString(){
         return "Meal [id=" + id + ", nameOfMeal=" + nameOfMeal + ", price=" + price + "]";

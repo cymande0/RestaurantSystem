@@ -50,7 +50,7 @@ public class Main extends Application {
         PreparingDatebase.fillDatebase();
 
         MealDao mealDao = new MealDao();
-        List<Meal> mealList = mealDao.getAllDate();
+        List<Meal> mealList = mealDao.getAllMeals();
 
         for(Meal meal : mealList){
             System.out.println(meal);

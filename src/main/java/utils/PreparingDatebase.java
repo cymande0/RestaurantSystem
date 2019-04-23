@@ -1,8 +1,9 @@
 package utils;
 
-//import datebase.dbutils.DBManager;
 import datebase.dbutils.HibernateUtil;
 import datebase.entity.Meal;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -30,5 +31,8 @@ public class PreparingDatebase {
         finally {
             session.close();
         }
+
+
+
     }
 }

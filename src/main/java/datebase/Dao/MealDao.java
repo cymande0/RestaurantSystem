@@ -37,7 +37,7 @@ public class MealDao {
         }
     }
 
-    public List<Meal> getAllDate(){
+    public List<Meal> getAllMeals(){
         String sqlQuery = "SELECT * FROM Meal";
         SQLQuery query = session.createSQLQuery(sqlQuery);
         List<Meal> mealList = query.addEntity(Meal.class).list();
