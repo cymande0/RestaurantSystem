@@ -29,7 +29,7 @@
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button fx:id="mainDishes" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Dania glowne">
+            <Button fx:id="mainDishes" mnemonicParsing="false" onAction="#mainDishes" prefHeight="55.0" prefWidth="137.0" text="Dania glowne">
                <HBox.margin>
                   <Insets />
                </HBox.margin>

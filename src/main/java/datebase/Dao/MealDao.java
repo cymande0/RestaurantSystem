@@ -5,6 +5,7 @@ import datebase.entity.Meal;
 import org.hibernate.*;
 import view.Input;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MealDao {
@@ -37,10 +38,17 @@ public class MealDao {
         }
     }
 
-    public List<Meal> getAllMeals(){
+    public ArrayList<Meal> getMainDishes(){
+        String sqlQuery = "SELECT * FROM Meal WHERE type_of_meal = 'Danie glowne'";
+        SQLQuery query = session.createSQLQuery(sqlQuery);
+        List<Meal> mealList = query.addEntity(Meal.class).list();
+        return (ArrayList<Meal>) mealList;
+    }
+
+    public ArrayList<Meal> getAllMeals(){
         String sqlQuery = "SELECT * FROM Meal";
         SQLQuery query = session.createSQLQuery(sqlQuery);
         List<Meal> mealList = query.addEntity(Meal.class).list();
-        return mealList;
+        return (ArrayList<Meal>) mealList;
     }
 }
