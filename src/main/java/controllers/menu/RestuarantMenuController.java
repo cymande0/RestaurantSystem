@@ -20,31 +20,25 @@ public class RestuarantMenuController {
 
     private MealDTO mealDTO = new MealDTO();
     private MealDao mealDao = new MealDao();
-
     @FXML
     public TableColumn name;
-
     @FXML
     public TableColumn composition;
-
     @FXML
     public TableColumn price;
-
     @FXML
     private TableView table;
     private ArrayList<Meal> meals;
     private ArrayList<MealProperty> mealsProperties;
-
-
     private MainController mainController;
-
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
-    }
 
     @FXML
     public void initialize(){
         processOfDisplayingSpecificTypeOfMeals("all");
+    }
+
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
     }
 
     public void processOfDisplayingSpecificTypeOfMeals(String typeOfMeal){
