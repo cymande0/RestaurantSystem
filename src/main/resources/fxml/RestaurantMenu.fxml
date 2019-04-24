@@ -9,32 +9,39 @@
    <children>
       <HBox alignment="CENTER" prefHeight="51.0" prefWidth="822.0">
          <children>
-            <Button fx:id="entireMenu" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Wszystko">
+            <Button fx:id="entireMenu" mnemonicParsing="false" onAction="#showAllDishes" prefHeight="55.0"
+            prefWidth="137.0"
+                    text="Wszystko">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button fx:id="breakfast" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Sniadania">
+            <Button fx:id="breakfast" mnemonicParsing="false" onAction="#showBreakfasts" prefHeight="55.0"
+                    prefWidth="137.0" text="Sniadania">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button fx:id="starters" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Przystawki">
+            <Button fx:id="starters" mnemonicParsing="false" onAction="#showStarters" prefHeight="55.0"
+                    prefWidth="137.0" text="Przystawki">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button fx:id="soups" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Zupy">
+            <Button fx:id="soups" mnemonicParsing="false" onAction="#showSoups" prefHeight="55.0" prefWidth="137.0"
+                    text="Zupy">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button fx:id="mainDishes" mnemonicParsing="false" onAction="#mainDishes" prefHeight="55.0" prefWidth="137.0" text="Dania glowne">
+            <Button fx:id="mainDishes" mnemonicParsing="false" onAction="#showMainDishes" prefHeight="55.0"
+                    prefWidth="137.0" text="Dania glowne">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button fx:id="drinks" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" text="Napoje">
+            <Button fx:id="drinks" mnemonicParsing="false" onAction="#showDrinks" prefHeight="55.0" prefWidth="137.0"
+            text="Napoje">
                <HBox.margin>
                   <Insets />
                </HBox.margin>

@@ -31,26 +31,9 @@ public class RestuarantMenuController {
     public TableColumn price;
 
     @FXML
-    private Button entireMenu;
-
-    @FXML
-    private Button breakfast;
-
-    @FXML
-    private Button starters;
-
-    @FXML
-    private Button soups;
-
-    @FXML
-    private Button mainDishes;
-
-    @FXML
-    private Button drinks;
-
-    @FXML
     private TableView table;
     private ArrayList<Meal> meals;
+    private ArrayList<MealProperty> mealsProperties;
 
 
     private MainController mainController;
@@ -61,25 +44,43 @@ public class RestuarantMenuController {
 
     @FXML
     public void initialize(){
-        setDataToTableColoums();
+        processOfDisplayingSpecificTypeOfMeals("all");
     }
 
-    public void setDataToTableColoums(){
-        ArrayList<MealProperty> mealProperties = new ArrayList<MealProperty>();
-        mealProperties = mealDTO.convertMealToMealProperty(mealDao.getAllMeals());
+    public void processOfDisplayingSpecificTypeOfMeals(String typeOfMeal){
+        if(typeOfMeal.equals("all")) {
+            mealsProperties = mealDTO.convertMealToMealProperty(mealDao.getAllMeals());
+        }
+        else {
+            mealsProperties = mealDTO.convertMealToMealProperty(mealDao.getTSpecficTypeOfMeals(typeOfMeal));
+        }
         name.setCellValueFactory(new PropertyValueFactory<MealProperty, String>("nameProp"));
         price.setCellValueFactory(new PropertyValueFactory<MealProperty, Double>("priceProp"));
-        final ObservableList<MealProperty> mealLists = FXCollections.observableArrayList(mealProperties);
+        final ObservableList<MealProperty> mealLists = FXCollections.observableArrayList(mealsProperties);
         table.setItems(mealLists);
     }
 
+    public void showAllDishes(ActionEvent actionEvent) {
+       processOfDisplayingSpecificTypeOfMeals("all");
+    }
 
-    public void mainDishes(ActionEvent actionEvent) {
-        ArrayList<MealProperty> mealProperties = new ArrayList<MealProperty>();
-        mealProperties = mealDTO.convertMealToMealProperty(mealDao.getMainDishes());
-        name.setCellValueFactory(new PropertyValueFactory<MealProperty, String>("nameProp"));
-        price.setCellValueFactory(new PropertyValueFactory<MealProperty, Double>("priceProp"));
-        final ObservableList<MealProperty> mealLists = FXCollections.observableArrayList(mealProperties);
-        table.setItems(mealLists);
+    public void showMainDishes(ActionEvent actionEvent) {
+        processOfDisplayingSpecificTypeOfMeals("Danie glowne");
+    }
+
+    public void showBreakfasts(ActionEvent actionEvent) {
+        processOfDisplayingSpecificTypeOfMeals("Sniadanie");
+    }
+
+    public void showStarters(ActionEvent actionEvent) {
+        processOfDisplayingSpecificTypeOfMeals("Przystawka");
+    }
+
+    public void showSoups(ActionEvent actionEvent) {
+        processOfDisplayingSpecificTypeOfMeals("Zupa");
+    }
+
+    public void showDrinks(ActionEvent actionEvent) {
+        processOfDisplayingSpecificTypeOfMeals("Napoj");
     }
 }

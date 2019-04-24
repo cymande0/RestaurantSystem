@@ -38,15 +38,15 @@ public class MealDao {
         }
     }
 
-    public ArrayList<Meal> getMainDishes(){
-        String sqlQuery = "SELECT * FROM Meal WHERE type_of_meal = 'Danie glowne'";
+    public ArrayList<Meal> getAllMeals(){
+        String sqlQuery = "SELECT * FROM Meal";
         SQLQuery query = session.createSQLQuery(sqlQuery);
         List<Meal> mealList = query.addEntity(Meal.class).list();
         return (ArrayList<Meal>) mealList;
     }
 
-    public ArrayList<Meal> getAllMeals(){
-        String sqlQuery = "SELECT * FROM Meal";
+    public ArrayList<Meal> getTSpecficTypeOfMeals(String typeOfMeal){
+        String sqlQuery = "SELECT * FROM Meal WHERE type_of_meal = '"+ typeOfMeal + "'";
         SQLQuery query = session.createSQLQuery(sqlQuery);
         List<Meal> mealList = query.addEntity(Meal.class).list();
         return (ArrayList<Meal>) mealList;

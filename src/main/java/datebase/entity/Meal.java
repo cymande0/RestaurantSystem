@@ -63,6 +63,4 @@ public class Meal {
         return "Meal [id=" + id + ", nameOfMeal=" + nameOfMeal + ", typeOfMeal=" + typeOfMeal + ", price=" + price +
                 "]";
     }
-
-
 }

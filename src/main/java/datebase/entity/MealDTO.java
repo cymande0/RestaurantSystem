@@ -11,8 +11,6 @@ public class MealDTO {
 
     public ArrayList<MealProperty> convertMealToMealProperty(ArrayList<Meal> mealList){
         ArrayList<MealProperty> mealPropertyList = new ArrayList<MealProperty>();
-//        List<Meal> mealList = new ArrayList<Meal>();
-//        mealList.addAll(mealDao.getAllMeals());
         for(Meal meal : mealList){
             mealPropertyList.add(new MealProperty(meal.getNameOfMeal(), meal.getTypeOfMeal(), meal.getPrice()));
         }
