@@ -18,10 +18,11 @@ public class MealDao {
         this.input = new Input();
     }
 
-    public void addMeal(){
+    public void addMeal(Meal meal){
         try {
             session.beginTransaction();
-            session.save(new Meal(input.getMealName(), input.getTypeOfMeal(), input.getMealPrice()));
+//            session.save(new Meal(input.getMealName(), input.getTypeOfMeal(), input.getMealPrice()));
+            session.save(meal);
             session.getTransaction().commit();
         } catch(Exception e){
             System.out.println(e.getMessage());

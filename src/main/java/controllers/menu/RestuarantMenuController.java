@@ -8,12 +8,14 @@ import datebase.entity.MealProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class RestuarantMenuController {
@@ -31,6 +33,10 @@ public class RestuarantMenuController {
     private ArrayList<Meal> meals;
     private ArrayList<MealProperty> mealsProperties;
     private MainController mainController;
+    public Button addMealButton;
+    public TextField nameTextFiled;
+    public TextField priceTypeField;
+    public ChoiceBox choiceTypeOfMeal;
 
     @FXML
     public void initialize(){
@@ -76,5 +82,12 @@ public class RestuarantMenuController {
 
     public void showDrinks(ActionEvent actionEvent) {
         processOfDisplayingSpecificTypeOfMeals("Napoj");
+    }
+
+    public void createMealInstance(ActionEvent actionEvent) {
+        String name = nameTextFiled.getText();
+        String type = choiceTypeOfMeal.getValue().toString();
+        Double price = Double.valueOf(priceTypeField.getText());
+        mealDao.addMeal(new Meal(name, type, price));
     }
 }

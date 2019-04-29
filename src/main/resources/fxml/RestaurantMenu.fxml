@@ -5,6 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
 
 <VBox maxWidth="822.0" prefHeight="552.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.menu.RestuarantMenuController">
    <children>
@@ -57,13 +58,22 @@
       </TableView>
       <Pane prefHeight="76.0" prefWidth="822.0" style="-fx-background-color: WHITE;">
          <children>
-            <Button layoutX="732.0" layoutY="32.0" mnemonicParsing="false" text="Dodaj" />
+            <Button fx:id="addMealButton" layoutX="732.0" layoutY="32.0" mnemonicParsing="false" onAction="#createMealInstance" text="Dodaj" />
             <Label alignment="CENTER" layoutX="103.0" layoutY="7.0" prefHeight="19.0" prefWidth="100.0" text="  Nazwa" />
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="326.0" layoutY="7.0" prefHeight="19.0" prefWidth="100.0" text="Typ" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
             <Label alignment="CENTER" layoutX="533.0" layoutY="7.0" prefHeight="19.0" prefWidth="100.0" text="Cena" />
-            <TextField layoutX="68.0" layoutY="32.0" />
-            <TextField layoutX="291.0" layoutY="32.0" />
-            <TextField layoutX="498.0" layoutY="32.0" />
+            <TextField fx:id="nameTextFiled" layoutX="68.0" layoutY="32.0" />
+            <TextField fx:id="priceTypeField" layoutX="498.0" layoutY="32.0" />
+            <ChoiceBox fx:id="choiceTypeOfMeal" layoutX="291.0" layoutY="32.0" prefWidth="170.0" value="Danie glowne">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Danie glowne" />
+                     <String fx:value="Przystawka" />
+                     <String fx:value="Sniadanie" />
+                     <String fx:value="Napoj" />
+                  </FXCollections>
+               </items>
+            </ChoiceBox>
          </children>
          <effect>
             <Blend mode="MULTIPLY" />
