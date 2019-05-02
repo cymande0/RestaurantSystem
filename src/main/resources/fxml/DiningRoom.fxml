@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="diningRoom" maxHeight="552.0" maxWidth="822.0" prefHeight="552.0" prefWidth="822.0" style="-fx-background-color: GREEN;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Circle fill="DODGERBLUE" layoutX="688.0" layoutY="134.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="118.0" layoutX="120.0" layoutY="371.0" stroke="BLACK" strokeType="INSIDE" width="197.0" />
+      <Circle fill="DODGERBLUE" layoutX="136.0" layoutY="261.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="214.0" layoutY="94.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="416.0" layoutY="288.0" radius="65.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="DODGERBLUE" layoutX="640.0" layoutY="410.0" radiusX="81.0" radiusY="83.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button layoutX="180.0" layoutY="48.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zamow" />
+      <Button layoutX="148.0" layoutY="387.0" mnemonicParsing="false" text="Zamow" />
+      <Label layoutX="204.0" layoutY="111.0" prefHeight="25.0" prefWidth="17.0" text="1">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="213.0" layoutY="438.0" text="7">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="180.0" layoutY="82.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zaplac" />
+      <Circle fill="DODGERBLUE" layoutX="432.0" layoutY="117.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button layoutX="397.0" layoutY="111.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zaplac" />
+      <Label layoutX="421.0" layoutY="140.0" prefHeight="25.0" prefWidth="17.0" text="2">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="397.0" layoutY="77.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zamow" />
+      <Button layoutX="101.0" layoutY="250.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zaplac" />
+      <Label layoutX="125.0" layoutY="279.0" prefHeight="25.0" prefWidth="17.0" text="4">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="101.0" layoutY="216.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zamow" />
+      <Button layoutX="656.0" layoutY="125.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zaplac" />
+      <Label layoutX="680.0" layoutY="154.0" prefHeight="25.0" prefWidth="17.0" text="3">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="656.0" layoutY="91.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zamow" />
+      <Button layoutX="383.0" layoutY="280.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zaplac" />
+      <Label layoutX="407.0" layoutY="309.0" prefHeight="25.0" prefWidth="17.0" text="5">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="383.0" layoutY="246.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zamow" />
+      <Button layoutX="610.0" layoutY="379.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zaplac" />
+      <Label layoutX="636.0" layoutY="414.0" prefHeight="25.0" prefWidth="17.0" text="6">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="610.0" layoutY="345.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zamow" />
+      <Button layoutX="227.0" layoutY="387.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="70.0" text="Zaplac" />
+   </children>
+   <padding>
+      <Insets top="30.0" />
+   </padding>
+</Pane>

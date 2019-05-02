@@ -14,6 +14,7 @@ public class MenuButtonsController {
 
     private static final String AUTHOR_INFO_FXML = "/fxml/AuthorInformation.fxml";
     private static final String MENU_INFO = "/fxml/RestaurantMenu.fxml";
+    private static final String DINING_ROOM = "/fxml/DiningRoom.fxml";
 
     @FXML
     public Button homeButton;
@@ -51,6 +52,8 @@ public class MenuButtonsController {
 
     @FXML
     public void startProcess(ActionEvent actionEvent) {
+        Pane diningRoom = FxmlUtils.fxmlLoader(DINING_ROOM);
+        pane.setCenter(diningRoom);
     }
 
     @FXML
