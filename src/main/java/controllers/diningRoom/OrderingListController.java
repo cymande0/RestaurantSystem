@@ -38,7 +38,4 @@ public class OrderingListController {
         this.roomController = roomController;
     }
 
-//    public void closeWindow(MouseEvent mouseEvent) {
-//        roomController.closeWindow();
-//    }
 }

@@ -30,11 +30,7 @@ public class RoomController {
     private Stage stage;
 
     @FXML
-    public void initialize() throws IOException {
-//        loader = FxmlUtils.getLoader(ORDERING_LIST);
-//        pane = loader.load();
-//        orderingListController = loader.getController();
-//        orderingListController.setRoomController(this);
+    public void initialize() {
     }
 
     public void order1stTable(ActionEvent actionEvent) {
@@ -44,7 +40,7 @@ public class RoomController {
     public void pay1stTable(ActionEvent actionEvent) {
     }
 
-    public void orderingList1stTable(MouseEvent mouseEvent) throws IOException {
+    public void orderingList1stTable(MouseEvent mouseEvent) {
         showTable("1");
     }
 
