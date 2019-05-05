@@ -1,6 +1,7 @@
 package controllers.diningRoom;
 
 import controllers.mainWindow.MenuButtonsController;
+import datebase.entity.Meal;
 import datebase.entity.MealProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,9 +26,7 @@ public class RoomController {
 
     private static final String ORDERING = "/fxml/Ordering.fxml";
     private static final String ORDERING_LIST = "/fxml/OrderingList.fxml";
-    private OrderingListController orderingListController = null;
-    private FXMLLoader loader = null;
-    private Stage stage;
+    private Stage stage = new Stage();
 
     @FXML
     public void initialize() {
@@ -127,25 +126,21 @@ public class RoomController {
     }
 
     public void showMenu(){
-        Pane tableOrdering = FxmlUtils.fxmlLoader(ORDERING);
-        Stage stage = new Stage();
-        stage.setScene(new Scene(tableOrdering));
-        stage.show();
-    }
+            Pane tableOrdering = FxmlUtils.fxmlLoader(ORDERING);
+            stage.setScene(new Scene(tableOrdering));
+            stage.show();
+        }
 
-    public void showTable(String numberOfTable)  {
-        Pane pane = null;
-        loader = FxmlUtils.getLoader(ORDERING_LIST);
-        try {
-            pane = loader.load();
+        public void showTable(String numberOfTable) {
+
+            FXMLLoader loader = FxmlUtils.getLoader(ORDERING_LIST);
+            try {
+                loader.load();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            Parent root = loader.getRoot();
+            stage.setScene(new Scene(root));
+            stage.show();
         }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-        orderingListController = loader.getController();
-        orderingListController.setNumberOfTable(numberOfTable);
-        stage = new Stage();
-        stage.setScene(new Scene(pane));
-        stage.show();
-    }
 }
